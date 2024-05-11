@@ -26,11 +26,20 @@ public class TestManejoPersonas {
 //        });
 
         //update persona
-        Persona personaNuevo = new Persona(4,"Mario", "podero", "Mario@ghg.com", "8554411");
-        personaDAO.actualizar(personaNuevo);
-        List<Persona> personasNuevas = personaDAO.seleccionar();
-        personasNuevas.forEach( p -> {
-            System.out.println(p);
-        });
+//        Persona personaNuevo = new Persona(4,"Mario", "podero", "Mario@ghg.com", "8554411");
+//        personaDAO.actualizar(personaNuevo);
+//        List<Persona> personasNuevas = personaDAO.seleccionar();
+//        personasNuevas.forEach( p -> {
+//            System.out.println(p);
+//        });
+
+        //eliminar persona
+            Persona persona = new Persona(4);
+            int personasEli = personaDAO.eliminar(persona);
+            System.out.println("Cantidad afectados "+personasEli);
+            List<Persona> personasNuevas = personaDAO.seleccionar();
+            personasNuevas.forEach( p -> {
+                System.out.println(p);
+            });
     }
 }
